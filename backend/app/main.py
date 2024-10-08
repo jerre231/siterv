@@ -25,10 +25,12 @@ class Questions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     question_text = db.Column(db.String(256), nullable=False)
     answer = db.Column(db.String(256), nullable=False)
+    lvl = db.Column(db.Integer, nullable=False)
 
     def __init__(self, question_text, answer):
         self.question_text = question_text
         self.answer = answer
+        self.lvl = lvl
 
 # Rotas
 
@@ -66,13 +68,20 @@ def login():
 
 @app.route('/api/prova', methods=['GET'])
 def get_prova():
-    provas = [
-        {"id": 1, "titulo": "Prova de Matemática"},
-        {"id": 2, "titulo": "Prova de História"}
-    ]
-    return jsonify(provas), 200
+    lvl1 = Questions.query.filter_by(lvl=1).first()
+    lvl2 = Questions.query.filter_by(lvl=2).first() 
+    lvl3 = Questions.query.filter_by(lvl=3).first()
+
+    #TODO: calcular o numero de questões a partir do for, ou usar alguma função do sqlalchemy para contar n de linhas
+    #TODO: adicionar questões do banco de dados, separar em proporções/parâmetros de entrada definidos previamente.
+    #TODO: a partir dois passos acima, separar cada level em proporções iguais, caso não sejam iguais, sacrificar questoes da ultima prova. Ex:
+    '''
+    sim1 = (lvl1)/3 + (lvl2)/3 + (lvl3)/3
+    sim2 - (lvl2)/3 + ...
+    '''
+    pass
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(debug=True, port='5000')

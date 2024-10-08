@@ -141,23 +141,6 @@ function Pagina() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        url = 'http://localhost:5000/api/pagina1';
-
-        const responseData = await apiRequest(url, 'GET');
-        setData(responseData);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [numero]);
-
   return (
     <div>
       <h2>{`Conteúdo da Página ${numero}`}</h2>
@@ -173,3 +156,7 @@ function Pagina() {
 }
 
 export default App;
+
+//TODO: Adicionar os links das provas para a home ("/") e rotear para a prova respectiva caso o usuário esteja autenticado
+//TODO: Personalizar paginas, fazer transição entre as páginas...
+//TODO: Botão de logout a partir da pagina da prova.

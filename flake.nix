@@ -15,6 +15,7 @@
       python312Packages.werkzeug
       python312Packages.flask-cors
       sqlitebrowser
+      kate
       nodejs
     ];
 
@@ -27,6 +28,7 @@
         python312Packages.werkzeug
         python312Packages.flask-cors
         sqlitebrowser
+        kate
         nodejs
       ];
 
