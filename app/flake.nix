@@ -14,6 +14,7 @@
       python312Packages.flask-sqlalchemy
       python312Packages.werkzeug
       python312Packages.flask-cors
+      python312Packages.pandas
       sqlitebrowser
       kate
       nodejs
@@ -27,6 +28,7 @@
         python312Packages.flask-sqlalchemy
         python312Packages.werkzeug
         python312Packages.flask-cors
+        python312Packages.pandas
         sqlitebrowser
         kate
         nodejs
