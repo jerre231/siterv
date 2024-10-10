@@ -188,6 +188,4 @@ A partir disso, basta acessar o site em http://localhost/3000/.
 
 A fins de apresentação segue o vídeo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AvYUiGij8gQ" frameborder="0" allowfullscreen></iframe>
-
 https://youtu.be/AvYUiGij8gQ
